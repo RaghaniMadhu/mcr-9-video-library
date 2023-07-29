@@ -5,6 +5,8 @@ export const VideosContext = createContext();
 
 function VideosContextProvider({ children }) {
   const [videos, setVideos] = useState(videosData);
+  const [playlists, setPlaylists] = useState([]);
+
   const [watchLaterVideos, setWatchLaterVideos] = useState(
     localStorage.getItem("watchLaterVideos")
       ? [
@@ -30,6 +32,44 @@ function VideosContextProvider({ children }) {
     localStorage.setItem("watchLaterVideos", modifiedWatchLaterVideos);
   };
 
+  const createAPlaylist = ({ title, description, videos }) => {
+    const modifiedPlaylist = [
+      ...playlists,
+      { id: playlists.length, title, description, videos },
+    ];
+    setPlaylists(modifiedPlaylist);
+    localStorage.setItem("playlists", modifiedPlaylist);
+  };
+
+  const deleteAPlaylist = (id) => {
+    const modifiedPlaylist = playlists.filter((playlist) => playlist.id !== id);
+    setPlaylists(modifiedPlaylist);
+    localStorage.setItem("playlists", modifiedPlaylist);
+  };
+
+  const addAVideoToPlaylist = (playlistId, videoId) => {
+    const modifiedPlaylist = playlists.map((eachPlaylist) =>
+      eachPlaylist.id === playlistId
+        ? { ...eachPlaylist, videos: [...eachPlaylist.videos, videoId] }
+        : eachPlaylist
+    );
+    setPlaylists(modifiedPlaylist);
+    localStorage.setItem("playlists", modifiedPlaylist);
+  };
+
+  const removeAVideoFromPlaylist = (playlistId, videoId) => {
+    const modifiedPlaylist = playlists.map((eachPlaylist) =>
+      eachPlaylist.id === playlistId
+        ? {
+            ...eachPlaylist,
+            videos: eachPlaylist.videos.filter((id) => id !== videoId),
+          }
+        : eachPlaylist
+    );
+    setPlaylists(modifiedPlaylist);
+    localStorage.setItem("playlists", modifiedPlaylist);
+  };
+
   return (
     <VideosContext.Provider
       value={{
@@ -38,6 +78,11 @@ function VideosContextProvider({ children }) {
         watchLaterVideos,
         addToWatchLaterVideos,
         removeFromWatchLaterVideos,
+        playlists,
+        createAPlaylist,
+        deleteAPlaylist,
+        addAVideoToPlaylist,
+        removeAVideoFromPlaylist,
       }}
     >
       {children}

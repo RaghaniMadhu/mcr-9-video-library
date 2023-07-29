@@ -275,3 +275,29 @@
   margin: 0 0 1rem 0;
   text-align: center;
 }
+
+iframe {
+  height: 35rem;
+  width: 50rem;
+  margin-block-start: 1rem;
+}
+
+.new-playlist-title-desc {
+  font-size: medium;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.new-playlist-title-desc::-webkit-input-placeholder {
+  color: var(--primary-color);
+}
+
+.new-playlist-cancel {
+  align-self: flex-end;
+}
+
+.amrgin-top-1 {
+  margin-top: 1rem;
+}

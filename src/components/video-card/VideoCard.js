@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import { MdWatchLater, MdOutlineWatchLater } from "react-icons/md";
 import { CategoryContext } from "../../contexts/CategoryContext";
 import { VideosContext } from "../../contexts/VideosContext";
+import { useNavigate } from "react-router-dom";
 
 function VideoCard({ videoData }) {
+  const navigate = useNavigate();
+
   const { categories } = useContext(CategoryContext);
   const {
     watchLaterVideos,
@@ -18,7 +21,12 @@ function VideoCard({ videoData }) {
   const isItAWatchLaterVideo = watchLaterVideos.includes(videoData._id);
 
   return (
-    <div className="video-card cursor-pointer flex-column gap-point-5">
+    <div
+      className="video-card cursor-pointer flex-column gap-point-5"
+      onClick={() => {
+        navigate("/video/" + videoData._id);
+      }}
+    >
       <div className="vid-img-div">
         <img
           src={videoData.thumbnail}
