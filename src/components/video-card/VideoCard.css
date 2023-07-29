@@ -1,0 +1,26 @@
+.video-card {
+  width: 20rem;
+}
+
+.vid-img-div {
+  position: relative;
+}
+
+.vid-img {
+  width: 100%;
+  height: 12rem;
+  border-radius: 0.2rem;
+}
+
+.watch-later-video-card-icon {
+  position: absolute;
+  right: 0;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  vertical-align: middle;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.2rem;
+  border-bottom-left-radius: 0.5rem;
+  cursor: pointer;
+}

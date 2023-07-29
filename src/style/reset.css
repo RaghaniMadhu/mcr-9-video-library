@@ -1,0 +1,17 @@
+:root {
+  /* --primary-color: #1d4ed8;
+  --secondary-color: #60a5fa; */
+  /* --primary-color: #813772;
+  --secondary-color: #f5d0fe; */
+  --primary-color: #1d4ed8;
+  --secondary-color: #dbeafe;
+  --white-color: #fff;
+  --black-color: #000;
+  --grey-color: #9ca3af;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  margin: 0;
+  color: var(--black-color);
+}

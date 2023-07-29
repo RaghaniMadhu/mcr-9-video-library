@@ -1,0 +1,5 @@
+/* import all individual page css over here */
+@import url("../components/sidebar/Sidebar.css");
+@import url("../components/video-card/VideoCard.css");
+
+/* @import url("react-toastify/dist/ReactToastify.css"); */
