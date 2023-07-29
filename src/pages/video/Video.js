@@ -1,10 +1,6 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import {
-  MdWatchLater,
-  MdOutlineWatchLater,
-  MdOutlinePlaylistAdd,
-} from "react-icons/md";
+import { MdWatchLater, MdOutlineWatchLater } from "react-icons/md";
 import { VideosContext } from "../../contexts/VideosContext";
 import Sidebar from "../../components/sidebar/Sidebar";
 import MoreVideosSidebar from "../../components/more-videos-sidebar/MoreVideosSidebar";
