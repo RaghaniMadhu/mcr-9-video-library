@@ -7,3 +7,5 @@
 5. Search Video
 6. Single Video Page
 7. Notes on a video
+
+(7. Notes on a video and Data Persist for Playlist Management Not Done)
